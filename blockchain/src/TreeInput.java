@@ -131,7 +131,7 @@ public class TreeInput {
             myWriter.close();
         }
     }    
-    public static void printBlock(Block block, boolean printTree, File file) throws IOException{
+    public static void printBlock(Block block, boolean printTree, File file) throws IOException {
         FileWriter myWriter = null;
         try {
             myWriter = new FileWriter(file);
@@ -156,7 +156,7 @@ public class TreeInput {
         catch(IOException e){
             System.out.println("Error writing to file");
         }
-        finally{
+        finally {
             myWriter.close();
         }
     }
