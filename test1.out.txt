@@ -1,0 +1,253 @@
+BEGIN BLOCK
+BEGIN HEADER
+hash of prev block: d37ec537717c0f85f2139bf6c416214f39913d151841ef33bd7c26d3cf440b42
+hash of the root: bde564e5cf15fc496f1ca370e4d969db7a06df73c16d3b4d3470a795e89b210b
+time stamp: 1601336618
+target: 0
+nonce: null
+END HEADER
+
+Node ID: 1
+Left Child ID: 2
+Edge Left <= blue
+Node Hash: bde564e5cf15fc496f1ca370e4d969db7a06df73c16d3b4d3470a795e89b210b
+Edge Right > blue
+Right Child ID: 3
+
+
+Node ID: 2
+Left Child ID: 4
+Edge Left <= after
+Node Hash: 91eef0d368eb7418f3a4804fac28908bfc23d96c04a51a4e67b0f208b2524e4e
+Edge Right > after
+Right Child ID: 5
+
+
+Node ID: 3
+Left Child ID: 6
+Edge Left <= the
+Node Hash: b6771d745f2cb9bcbc82e03bcfbfa73d2cf5b5e10b5e359b901d89e01570774b
+Edge Right > the
+Right Child ID: 7
+
+
+Node ID: 4
+Left Child ID: 8
+Edge Left <= a
+Node Hash: 5bab9318bb35e0b8bc29ed4c784b0ca85439e75e744034ba303a78fa1dca12d0
+Edge Right > a
+Right Child ID: 9
+
+
+Node ID: 5
+String: blue
+Node Hash: 16477688c0e00699c6cfa4497a3612d7e83c532062b64b250fed8908128ed548
+
+
+Node ID: 6
+String: the
+Node Hash: b9776d7ddf459c9ad5b0e1d6ac61e27befb5e99fd62446677600d7cacef544d0
+
+
+Node ID: 7
+String: this
+Node Hash: 1eb79602411ef02cf6fe117897015fff89f80face4eccd50425c45149b148408
+
+
+Node ID: 8
+String: a
+Node Hash: ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+
+
+Node ID: 9
+String: after
+Node Hash: f39592393ef0859cb196a52693d2cea00fb2df784b3c04ae54aa7cadb8e562f8
+
+
+END BLOCK
+
+BEGIN BLOCK
+BEGIN HEADER
+hash of prev block: 0
+hash of the root: d37ec537717c0f85f2139bf6c416214f39913d151841ef33bd7c26d3cf440b42
+time stamp: 1601336615
+target: 0
+nonce: null
+END HEADER
+
+Node ID: 1
+Left Child ID: 2
+Edge Left <= lazy
+Node Hash: d37ec537717c0f85f2139bf6c416214f39913d151841ef33bd7c26d3cf440b42
+Edge Right > lazy
+Right Child ID: 3
+
+
+Node ID: 2
+Left Child ID: 4
+Edge Left <= fox
+Node Hash: a831cd4e677df341d7cb21776be23fa3c500c2edffcdac6520d4c0b30b6a3e7f
+Edge Right > fox
+Right Child ID: 5
+
+
+Node ID: 3
+Left Child ID: 6
+Edge Left <= veiofhgih
+Node Hash: d7ea7e5ef373a78d37bfe198e09792f284f60a7979a8184ada6cdcf34d1cc0c6
+Edge Right > veiofhgih
+Right Child ID: 7
+
+
+Node ID: 4
+Left Child ID: 8
+Edge Left <= dog
+Node Hash: 35566d5ebdd2d613799b4d17235aeaf68420745fe0434b99ec1ce48b164b8047
+Edge Right > dog
+Right Child ID: 9
+
+
+Node ID: 5
+Left Child ID: 10
+Edge Left <= iweh
+Node Hash: 4e5ef3fc4e5f5fb455eea0af2064a88e4923718700bbd0393727eec44923da9e
+Edge Right > iweh
+Right Child ID: 11
+
+
+Node ID: 6
+Left Child ID: 12
+Edge Left <= quick
+Node Hash: 8b9908a003818e7cdd36d6203a2cd9143e9aba457847698e3b6cc6b686f08075
+Edge Right > quick
+Right Child ID: 13
+
+
+Node ID: 7
+Left Child ID: 14
+Edge Left <= woo
+Node Hash: 16a0e022d6bfddfdcfb9cee5bde06b7e10d1527604b1db17291796c3dc18b306
+Edge Right > woo
+Right Child ID: 15
+
+
+Node ID: 8
+Left Child ID: 16
+Edge Left <= aiughwioa jws
+Node Hash: 3c02a4ed1686487d1149801359f4993f506333d5ba22b04803c80313d20516f0
+Edge Right > aiughwioa jws
+Right Child ID: 17
+
+
+Node ID: 9
+Left Child ID: 18
+Edge Left <= eihgkwr
+Node Hash: cfc0268c03d5a8a14a149bda56018c23c9d97097228becd11b601ef0deaf6aff
+Edge Right > eihgkwr
+Right Child ID: 19
+
+
+Node ID: 10
+Left Child ID: 20
+Edge Left <= hello
+Node Hash: 997000c8786abcd66723b037bd51fadb9d7cc365fb28f86bc8d15be7f26a7ba6
+Edge Right > hello
+Right Child ID: 21
+
+
+Node ID: 11
+Left Child ID: 22
+Edge Left <= jumps
+Node Hash: 41a74ca5230d176688d3b9c4cc1ede28668d4e0662646c7891183b6ddee2a55d
+Edge Right > jumps
+Right Child ID: 23
+
+
+Node ID: 12
+Left Child ID: 24
+Edge Left <= over
+Node Hash: 15ed02770820de070183c626dec84f756382b68d3628d5e14c30b2e22951884b
+Edge Right > over
+Right Child ID: 25
+
+
+Node ID: 13
+Left Child ID: 26
+Edge Left <= the
+Node Hash: 7fdf3497984de6317a35d24dfb1b52f39ddab13df0daeabbe3260a891fc041c0
+Edge Right > the
+Right Child ID: 27
+
+
+Node ID: 14
+String: woo
+Node Hash: b260539511e1699624d952b041c76d1853d0fe066f42decade1d08e92acb250f
+
+
+Node ID: 15
+String: yay
+Node Hash: f6078ebe0c2f08c225c0349aef2fe062d71b972e3c91b9687cccdff24d0c8ac8
+
+
+Node ID: 16
+String: aiughwioa jws
+Node Hash: fbe0d8e7ca7365ddf178825a45a496bd53f4090356a9d72c227af934f6b2855c
+
+
+Node ID: 17
+String: dog
+Node Hash: cd6357efdd966de8c0cb2f876cc89ec74ce35f0968e11743987084bd42fb8944
+
+
+Node ID: 18
+String: eihgkwr
+Node Hash: 960b173525ab7fbb0f22c5d7c3c72f27ad307340a49f3111b65ea052eb93de0
+
+
+Node ID: 19
+String: fox
+Node Hash: 776cb326ab0cd5f0a974c1b9606044d8485201f2db19cf8e3749bdee5f36e200
+
+
+Node ID: 20
+String: hello
+Node Hash: 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+
+
+Node ID: 21
+String: iweh
+Node Hash: 8b263f4c25268f0bd289e08e5d7ffb4b653f71e629ae4e95761e60ba39364613
+
+
+Node ID: 22
+String: jumps
+Node Hash: ef30940a2d1b943c8007b8a15e45935dc01902b7c0534dc7e27fda30a9b81aef
+
+
+Node ID: 23
+String: lazy
+Node Hash: 81fd67d02f679b818a4df6a50139958aa857eddc4d8f3561630dfb905e6d3c24
+
+
+Node ID: 24
+String: over
+Node Hash: 5fb6a47e368e12e5d8b19280796e6a3d146fe391ed2e967d5f95c55bfb0f9c2f
+
+
+Node ID: 25
+String: quick
+Node Hash: 22c72aa82ce77c82e2ca65a711c79eaa4b51c57f85f91489ceeacc7b385943ba
+
+
+Node ID: 26
+String: the
+Node Hash: b9776d7ddf459c9ad5b0e1d6ac61e27befb5e99fd62446677600d7cacef544d0
+
+
+Node ID: 27
+String: veiofhgih
+Node Hash: 1a22a4b79c902f591412083bbca855d9bafd1f01cf2c3fbf9691b430819a6b97
+
+
+END BLOCK
+
