@@ -31,14 +31,16 @@ public class TreeInput {
                 firstFile = fileName;
             }
             strings = readFile(fileName);
-            Node root = MerkleTree.buildTree(strings);
+            if (strings != null) {
+                Node root = MerkleTree.buildTree(strings);
 
-            Header header = new Header(previousHash, root.getHash());
+                Header header = new Header(previousHash, root.getHash());
 
-            block = new Block(header, previousBlock, root);
+                block = new Block(header, previousBlock, root, fileName);
 
-            previousBlock = block;
-            previousHash = root.getHash();
+                previousBlock = block;
+                previousHash = root.getHash();
+            }
 
         }
 
@@ -56,13 +58,20 @@ public class TreeInput {
 
             while (block != null) {
 
-                System.out.println("Would you like to print the Merkle Tree? respond with yes or no");
-                if (s.next().equals("yes")) {
+                System.out.println("Would you like to print the Merkle Tree for " + block.getFileName() + " ? respond with yes or no");
+                String input = s.next();
+                while(!input.equals("yes") && !input.equals("no")) {
+                    System.out.println("Invalid input");
+                    input = s.next();
+                }
+                if (input.equals("yes")) {
                     printTree = true;
                 }
-                printBlock(block, printTree, myWriter);
-                block = block.getPrevious();
-                printTree = false;
+                else if(input.equals("no")){
+                    printBlock(block, printTree, myWriter);
+                    block = block.getPrevious();
+                    printTree = false;
+                }
 
             }
         } catch (IOException e) {
@@ -79,20 +88,26 @@ public class TreeInput {
         ArrayList<String> strings = new ArrayList<>();
 
         String text;
-        File file = new File("/Users/hannahleland/Desktop/CSE 297/blockchain/blockchain/src/" + filename);
-        BufferedReader br = new BufferedReader(new FileReader(file));
+        File file = null;
         try {
-            while ((text = br.readLine()) != null) {
-                strings.add(text);
+            file = new File("/Users/hannahleland/Desktop/CSE 297/blockchain/blockchain/src/" + filename);
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            try {
+                while ((text = br.readLine()) != null) {
+                    strings.add(text);
+                }
+            } catch (Exception e) {
+                System.out.println("No such file");
+            } finally {
+                br.close();
             }
-        } catch (Exception e) {
-            System.out.println("No such file");
-        } finally {
-            br.close();
-        }
 
-        Collections.sort(strings);
-        return strings;
+            Collections.sort(strings);
+            return strings;
+        } catch (Exception e) {
+            System.out.println("File not found");
+            return null;
+        }
 
     }
 
