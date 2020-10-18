@@ -41,6 +41,9 @@ public class Header {
     public String getNonce(){
         return nonce;
     }
+    public void setNonce(String s){
+        this.nonce = s;
+    }
     //from here down is new 
     public String computeNonce(String rootHash, BigInteger target){
 

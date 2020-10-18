@@ -37,7 +37,7 @@ public class TreeInput {
                 Header header = new Header(previousHash, root.getHash());
 
                 block = new Block(header, previousBlock, root, fileName);
-
+                badBlock.badNonce(new Block(header, previousBlock, root, fileName));
                 previousBlock = block;
                 previousHash = root.getHash();
             }
@@ -61,16 +61,24 @@ public class TreeInput {
                 System.out.println("Would you like to print the Merkle Tree for " + block.getFileName() + " ? respond with yes or no");
                 String input = s.next();
                 while(!input.equals("yes") && !input.equals("no")) {
-                    System.out.println("Invalid input");
+                    System.out.println("Invalid input. Type \"yes\" or \"no\".");
                     input = s.next();
+                }
+                if(verify.verifyBlock(block)){
+                    System.out.println("Block is valid");
+                }
+                else {
+                    System.out.println("Block isn't valid");
                 }
                 if (input.equals("yes")) {
                     printTree = true;
-                }
-                else if(input.equals("no")){
                     printBlock(block, printTree, myWriter);
                     block = block.getPrevious();
+                }
+                else if(input.equals("no")){
                     printTree = false;
+                    printBlock(block, printTree, myWriter);
+                    block = block.getPrevious();
                 }
 
             }
