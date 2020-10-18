@@ -7,5 +7,8 @@ public class Node{
     public String getHash(){
         return this.hash;
     }
+    public void setHash(String s){
+        this.hash = s;
+    }
 
 }

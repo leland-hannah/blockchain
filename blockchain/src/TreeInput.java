@@ -37,7 +37,8 @@ public class TreeInput {
                 Header header = new Header(previousHash, root.getHash());
 
                 block = new Block(header, previousBlock, root, fileName);
-                badBlock.badNonce(new Block(header, previousBlock, root, fileName));
+                badBlock.badNonce(new Block(new Header(block.getHeader().getPrevHash(), block.getHeader().getRootHash()), previousBlock, root, fileName));
+                badBlock.incorrectHash(new Block(new Header(block.getHeader().getPrevHash(), block.getHeader().getRootHash()), previousBlock, root, fileName));
                 previousBlock = block;
                 previousHash = root.getHash();
             }
@@ -55,6 +56,13 @@ public class TreeInput {
         FileWriter myWriter = null;
         try {
             myWriter = new FileWriter(myObj);
+
+            if(verify.verifyChain(block)){
+                System.out.println("Valid chain");
+            }
+            else{
+                System.out.println("Invalid chain");
+            }
 
             while (block != null) {
 
@@ -98,7 +106,7 @@ public class TreeInput {
         String text;
         File file = null;
         try {
-            file = new File("/Users/hannahleland/Desktop/CSE 297/blockchain/blockchain/src/" + filename);
+            file = new File(filename);
             BufferedReader br = new BufferedReader(new FileReader(file));
             try {
                 while ((text = br.readLine()) != null) {
@@ -160,6 +168,7 @@ public class TreeInput {
     }
 
     public static void printBlock(Block block, boolean printTree, FileWriter myWriter) throws IOException {
+        
         myWriter.write("BEGIN BLOCK\n");
         myWriter.write("BEGIN HEADER\n");
         myWriter.write("hash of prev block: " + block.getHeader().getPrevHash() + "\n");

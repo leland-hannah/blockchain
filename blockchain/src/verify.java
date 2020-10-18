@@ -16,7 +16,7 @@ public class verify {
             }
         }
         catch (Exception e){
-            System.out.println("Something went wrong");
+            System.out.println("Something went wrong" + e);
             return false;
         }
 
@@ -33,7 +33,7 @@ public class verify {
                 
             }
             catch (Exception e){
-                System.out.println("Something went wrong");
+                System.out.println("Something went wrong"+e);
                 return false;
             }
             
@@ -59,9 +59,19 @@ public class verify {
 
         }
         catch (Exception e){
-            System.out.println("Something went wrong");
+            System.out.println("Something went wrong"+e);
             return false;
         }
     
+    }
+    public static boolean verifyChain(Block block) throws IOException{
+
+        if(!block.getHeader().getPrevHash().equals("0")){
+            return verifyBlock(block) && verifyChain(block.getPrevious());
+        }
+        else{
+            return verifyBlock(block);
+        }
+
     }
 }

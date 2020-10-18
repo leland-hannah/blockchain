@@ -22,9 +22,19 @@ public class badBlock {
 
     }
 
-    /*public static void incorrectHash(){
+    public static void incorrectHash(Block block) throws IOException{
 
-    }*/
+        Node root = new InnerNode(block.getRoot().getHash(), ((InnerNode)block.getRoot()).getLeft(), ((InnerNode)block.getRoot()).getRight(), ((InnerNode)block.getRoot()).getPrefix());
+        Block newB = new Block(block.getHeader(), block.getPrevious(), root, block.getFileName());
+        newB.getRoot().setHash("x");
+        if(!verify.verifyBlock(newB)){
+            System.out.println("Bad Hash test passes");
+        }
+        else {
+            System.out.println("Bad Hash test didn't pass");
+        }
+
+    }
 
     public static String computeBadNonce(String rootHash, BigInteger target){
 
