@@ -14,10 +14,10 @@ public class badBlock {
         Block newB = new Block(block.getHeader(), block.getPrevious(), block.getRoot(), block.getFileName());
         newB.getHeader().setNonce(computeBadNonce(newB.getRoot().getHash(), newB.getHeader().getTarget()));
         if(!verify.verifyBlock(newB)){
-            System.out.println("Bad Nonce test passes");
+            System.out.println("Bad Nonce test for " + newB.getFileName() + " passes");
         }
         else {
-            System.out.println("Bad Nonce test didn't pass");
+            System.out.println("Bad Nonce test for " + newB.getFileName() + " didn't pass");
         }
 
     }
@@ -28,10 +28,10 @@ public class badBlock {
         Block newB = new Block(block.getHeader(), block.getPrevious(), root, block.getFileName());
         newB.getRoot().setHash("x");
         if(!verify.verifyBlock(newB)){
-            System.out.println("Bad Hash test passes");
+            System.out.println("Bad Hash test for " + newB.getFileName() + " passes");
         }
         else {
-            System.out.println("Bad Hash test didn't pass");
+            System.out.println("Bad Hash test for " + newB.getFileName() + " didn't pass");
         }
 
     }

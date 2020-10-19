@@ -64,26 +64,35 @@ public class TreeInput {
                 System.out.println("Invalid chain");
             }
 
-            if(verify.inchain("lazy", block)){
-                System.out.println("inchain passed");
+            String test = "lazy";
+            if(verify.inchain(test, block, block)){
+                System.out.println("inchain test for " + test + " passed");
             }
             else{
-                System.out.println("inchain didn't pass");
+                System.out.println("inchain test for " + test + " failed");
+            }
+
+            test = "apple";
+            if(verify.inchain(test, block, block)){
+                System.out.println("inchain test for " + test + " passed");
+            }
+            else{
+                System.out.println("inchain test for " + test + " failed");
             }
 
             while (block != null) {
 
-                System.out.println("Would you like to print the Merkle Tree for " + block.getFileName() + " ? respond with yes or no");
+                System.out.println("Would you like to print the Merkle Tree for " + block.getFileName() + "? respond with yes or no");
                 String input = s.next();
                 while(!input.equals("yes") && !input.equals("no")) {
                     System.out.println("Invalid input. Type \"yes\" or \"no\".");
                     input = s.next();
                 }
                 if(verify.verifyBlock(block)){
-                    System.out.println("Block is valid");
+                    System.out.println("Block for " + block.getFileName() + " is valid");
                 }
                 else {
-                    System.out.println("Block isn't valid");
+                    System.out.println("Block for " + block.getFileName() + "isn't valid");
                 }
                 if (input.equals("yes")) {
                     printTree = true;
@@ -113,7 +122,7 @@ public class TreeInput {
         String text;
         File file = null;
         try {
-            file = new File("/Users/hannahleland/Desktop/CSE 297/blockchain/blockchain/src/" + filename);
+            file = new File(filename);
             BufferedReader br = new BufferedReader(new FileReader(file));
             try {
                 while ((text = br.readLine()) != null) {

@@ -71,23 +71,35 @@ public class verify {
             return verifyBlock(block) && verifyChain(block.getPrevious());
         }
         else{
+            if(block.getPrevious() != null){
+                return (block.getHeader().getPrevHash().equals(block.getPrevious().getHeader().getRootHash())) && verifyBlock(block);
+            }
             return verifyBlock(block);
         }
 
     }
 
-    public static boolean inchain(String s, Block block){
+    public static boolean inchain(String s, Block block, Block og){
         ArrayList<String> list = new ArrayList<>();
         if(traverseTree(block.getRoot(), s)){
             proofMembership(block.getRoot(), s, list);
+            ArrayList<String> blockList = new ArrayList<>();
+
+            while(!og.getHeader().getRootHash().equals(list.get(0))){
+                blockList.add(og.getHeader().getRootHash());
+                og = og.getPrevious();
+            }
+
+            Collections.reverse(blockList);
             Collections.reverse(list);
+            list.addAll(blockList);
             
-            System.out.println(Arrays.toString(list.toArray()));
+            //System.out.println(Arrays.toString(list.toArray()));
 
             return true;
         }
         else if(!block.getHeader().getPrevHash().equals("0")){
-            return inchain(s, block.getPrevious());
+            return inchain(s, block.getPrevious(), og);
         }
         else {
             return false;
