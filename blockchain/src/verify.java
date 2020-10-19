@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.*;
+import java.util.Arrays;
 
 public class verify {
 
@@ -72,6 +73,60 @@ public class verify {
         else{
             return verifyBlock(block);
         }
+
+    }
+
+    public static boolean inchain(String s, Block block){
+        ArrayList<String> list = new ArrayList<>();
+        if(traverseTree(block.getRoot(), s)){
+            proofMembership(block.getRoot(), s, list);
+            Collections.reverse(list);
+            
+            System.out.println(Arrays.toString(list.toArray()));
+
+            return true;
+        }
+        else if(!block.getHeader().getPrevHash().equals("0")){
+            return inchain(s, block.getPrevious());
+        }
+        else {
+            return false;
+        }
+
+    }
+    public static boolean traverseTree(Node current, String s){
+        if(current instanceof LeafNode){
+            return ((LeafNode) current).getData().equals(s);
+        }
+        InnerNode n = (InnerNode) current;
+        if(n.getLeft() != null && n.getPrefix().compareTo(s) >= 0){
+            return traverseTree(n.getLeft(), s);
+        }
+        else if (n.getRight() != null) {
+            return traverseTree(n.getRight(), s);
+        }
+        return false;
+    }
+    public static List<String> proofMembership(Node current, String s, List<String> list){
+        list.add(current.getHash());
+
+        if(current instanceof LeafNode){
+            return list;
+        }
+        InnerNode n = (InnerNode) current;
+
+        if(n.getLeft() != null && n.getPrefix().compareTo(s) >= 0){
+            if(n.getRight() != null)
+                list.add(n.getRight().getHash());
+            return proofMembership(n.getLeft(), s, list);
+        }
+        else if (n.getRight() != null){
+            if(n.getLeft() != null)
+                list.add(n.getLeft().getHash());
+            return proofMembership(n.getRight(), s, list);
+        }
+
+        return null;
 
     }
 }

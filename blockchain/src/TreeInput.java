@@ -64,6 +64,13 @@ public class TreeInput {
                 System.out.println("Invalid chain");
             }
 
+            if(verify.inchain("lazy", block)){
+                System.out.println("inchain passed");
+            }
+            else{
+                System.out.println("inchain didn't pass");
+            }
+
             while (block != null) {
 
                 System.out.println("Would you like to print the Merkle Tree for " + block.getFileName() + " ? respond with yes or no");
@@ -106,7 +113,7 @@ public class TreeInput {
         String text;
         File file = null;
         try {
-            file = new File(filename);
+            file = new File("/Users/hannahleland/Desktop/CSE 297/blockchain/blockchain/src/" + filename);
             BufferedReader br = new BufferedReader(new FileReader(file));
             try {
                 while ((text = br.readLine()) != null) {
