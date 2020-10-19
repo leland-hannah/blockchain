@@ -1,0 +1,22 @@
+Bad Nonce test for test1.txt passes
+Bad Hash test for test1.txt passes
+Bad Nonce test for test2.txt passes
+Bad Hash test for test2.txt passes
+Valid chain
+inchain test for lazy passed
+
+ Proof of Membership: 
+81fd67d02f679b818a4df6a50139958aa857eddc4d8f3561630dfb905e6d3c24
+ef30940a2d1b943c8007b8a15e45935dc01902b7c0534dc7e27fda30a9b81aef
+41a74ca5230d176688d3b9c4cc1ede28668d4e0662646c7891183b6ddee2a55d
+997000c8786abcd66723b037bd51fadb9d7cc365fb28f86bc8d15be7f26a7ba6
+4e5ef3fc4e5f5fb455eea0af2064a88e4923718700bbd0393727eec44923da9e
+35566d5ebdd2d613799b4d17235aeaf68420745fe0434b99ec1ce48b164b8047
+a831cd4e677df341d7cb21776be23fa3c500c2edffcdac6520d4c0b30b6a3e7f
+d7ea7e5ef373a78d37bfe198e09792f284f60a7979a8184ada6cdcf34d1cc0c6
+d37ec537717c0f85f2139bf6c416214f39913d151841ef33bd7c26d3cf440b42
+bde564e5cf15fc496f1ca370e4d969db7a06df73c16d3b4d3470a795e89b210b
+
+inchain test for apple failed
+Block for test2.txt is valid
+Block for test1.txt is valid

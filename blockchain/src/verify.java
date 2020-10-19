@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class verify {
 
+    public static String l; 
+
     public static boolean verifyBlock(Block block) throws IOException{
         
         try{
@@ -94,7 +96,7 @@ public class verify {
             Collections.reverse(list);
             list.addAll(blockList);
             
-            //System.out.println(Arrays.toString(list.toArray()));
+            l = Arrays.toString(list.toArray());
 
             return true;
         }

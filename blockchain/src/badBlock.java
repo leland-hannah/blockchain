@@ -10,29 +10,32 @@ import java.math.BigInteger;
 
 public class badBlock {
     
-    public static void badNonce(Block block) throws IOException{
+    public static String badNonce(Block block) throws IOException{
+        String s;
         Block newB = new Block(block.getHeader(), block.getPrevious(), block.getRoot(), block.getFileName());
         newB.getHeader().setNonce(computeBadNonce(newB.getRoot().getHash(), newB.getHeader().getTarget()));
         if(!verify.verifyBlock(newB)){
-            System.out.println("Bad Nonce test for " + newB.getFileName() + " passes");
+            s = "Bad Nonce test for " + newB.getFileName() + " passes";
         }
         else {
-            System.out.println("Bad Nonce test for " + newB.getFileName() + " didn't pass");
+            s = "Bad Nonce test for " + newB.getFileName() + " didn't pass";
         }
+        return s;
 
     }
 
-    public static void incorrectHash(Block block) throws IOException{
-
+    public static String incorrectHash(Block block) throws IOException{
+        String s;
         Node root = new InnerNode(block.getRoot().getHash(), ((InnerNode)block.getRoot()).getLeft(), ((InnerNode)block.getRoot()).getRight(), ((InnerNode)block.getRoot()).getPrefix());
         Block newB = new Block(block.getHeader(), block.getPrevious(), root, block.getFileName());
         newB.getRoot().setHash("x");
         if(!verify.verifyBlock(newB)){
-            System.out.println("Bad Hash test for " + newB.getFileName() + " passes");
+            s = "Bad Hash test for " + newB.getFileName() + " passes";
         }
         else {
-            System.out.println("Bad Hash test for " + newB.getFileName() + " didn't pass");
+            s = "Bad Hash test for " + newB.getFileName() + " didn't pass";
         }
+        return s;
 
     }
 
